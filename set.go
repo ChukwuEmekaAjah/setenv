@@ -17,6 +17,8 @@ func readFile(envFile string) (string, error) {
 
 	file, err := os.Open(filePath)
 
+	defer file.Close()
+
 	if err != nil {
 		return "", errors.Unwrap(err)
 	}
