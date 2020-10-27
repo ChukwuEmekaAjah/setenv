@@ -25,7 +25,7 @@ import (
 	"github.com/chukwuemekaajah/setenv"
 )
 
-SetEnv()
+setenv.SetEnv()
 
 
 ```
