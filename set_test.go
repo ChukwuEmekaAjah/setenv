@@ -21,6 +21,24 @@ func TestSetEnv(t *testing.T) {
 	}
 }
 
+func TestMultilineValueSetting(t *testing.T) {
+	SetEnv()
+
+	value, ok := os.LookupEnv("DB_USERNAME")
+
+	multilineValue := "demodafjklklklklklklklklklklklklklklklklklklklsssadfkljffssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssskljjjjjjjjjjlkkkkkk"
+
+	if ok == false {
+		t.Log("DB_USERNAME environment variable should be set")
+		t.Fail()
+	}
+
+	if value != multilineValue {
+		t.Log("Incorrect environment variable value set for DB_USERNAME")
+		t.Fail()
+	}
+}
+
 func TestReadFile(t *testing.T) {
 	_, err := readFile(".env")
 

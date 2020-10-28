@@ -56,6 +56,7 @@ func SetEnv() {
 		if strings.TrimSpace(variable)[0] == '#' {
 			continue
 		}
+
 		variable = strings.TrimSpace(variable)
 		variableParts := strings.Split(variable, "=")
 		variableParts[1] = strings.TrimSpace(variableParts[1])
