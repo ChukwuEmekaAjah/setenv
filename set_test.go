@@ -17,6 +17,7 @@ func TestSetEnv(t *testing.T) {
 
 	if value != "http://localhost" {
 		t.Log("Incorrect environment variable value set")
+		t.Log("Expected", "http://localhost", "\n Got", value)
 		t.Fail()
 	}
 }
@@ -35,6 +36,7 @@ func TestMultilineValueSetting(t *testing.T) {
 
 	if value != multilineValue {
 		t.Log("Incorrect environment variable value set for DB_USERNAME")
+		t.Log("Expected", multilineValue, "\n Got", value)
 		t.Fail()
 	}
 }
