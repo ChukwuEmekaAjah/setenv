@@ -1,3 +1,6 @@
+/*
+Package setenv implements a simple library for instantiating environment variables in the program running process. It automatically looks for the .env file in the project root folder, parses the data in it (ignoring comments) and setting the environment variables needed by the running program
+*/
 package setenv
 
 import (
@@ -38,7 +41,7 @@ func readFile(envFile string) (string, error) {
 	return envFileDataString, nil
 }
 
-// SetEnv sets the corresponding environmental variable key value pairs
+// SetEnv sets the corresponding environmental variable key value pairs.
 func SetEnv() {
 	envFile := ".env"
 	fileString, err := readFile(envFile)
